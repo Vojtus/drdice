@@ -1,0 +1,15 @@
+<h1>Rolls#roll</h1>
+
+<h2>Roll</h2>
+<%= form_for(@roll) do |f| %>
+  <%= f.label :roll %>
+  <%= f.select :roll, [["6", 6], ["10", 10]] %>
+
+  <%= f.submit %>
+
+<% end  %>
+
+<% @rolls.each do |roll| %>
+  <%= "#{roll.roll} | #{time_ago_in_words(roll.created_at)}" %>
+  <br />
+<% end %>
