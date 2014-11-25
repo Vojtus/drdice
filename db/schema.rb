@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124194433) do
+ActiveRecord::Schema.define(version: 20141125212646) do
 
   create_table "rolls", force: true do |t|
     t.integer  "roll"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "dice"
   end
 
   create_table "users", force: true do |t|

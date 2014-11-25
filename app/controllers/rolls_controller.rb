@@ -6,7 +6,7 @@ class RollsController < ApplicationController
 
   def create
     @roll = Roll.create(roll_params)
-    @roll.roll = 1 + rand(@roll.roll)
+    @roll.roll = 1 + rand(@roll.dice)
     if @roll.save
       redirect_to root_url
     else
@@ -30,6 +30,6 @@ class RollsController < ApplicationController
 
   private
   def roll_params
-    params.require(:roll).permit(:roll)
+    params.require(:roll).permit(:roll, :dice)
   end
 end

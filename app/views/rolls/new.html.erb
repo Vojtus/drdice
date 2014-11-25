@@ -1,15 +1,26 @@
-<h1>Rolls#roll</h1>
+<h1>Hoď si Kostkou!</h1>
 
-<h2>Roll</h2>
+<h2>Made by: <a>Hrníček Mlíka</a></h2>
 <%= form_for(@roll) do |f| %>
-  <%= f.label :roll %>
-  <%= f.select :roll, [["6", 6], ["10", 10], ["100", 100], ["20", 20], ["4", 4]] %>
+  <%= f.label :kostka %>
+  <%= f.select :dice, [["6", 6], ["10", 10], ["100", 100], ["20", 20], ["4", 4]] %>
 
-  <%= f.submit %>
+  <%= f.submit :Hoď! %>
 
 <% end  %>
 
-<% @rolls.each do |roll| %>
-  <%= "#{roll.roll} | #{time_ago_in_words(roll.created_at)}" %>
-  <br />
-<% end %>
+
+<table class="container">
+  <thead>
+    <th><h1>Hod:</h1></th>
+    <th><h1>Kostka:</h1></th>
+    <th><h1>Čas:</h1></th>
+  </thead>
+  <% @rolls.each do |roll| %>
+    <tr>
+      <td><%= "#{roll.roll}" %></td>
+      <td><%= "#{roll.dice} k" %></td>
+      <td><%= "#{time_ago_in_words(roll.created_at)}" %></td>
+    </tr>
+  <% end %>
+</table>
