@@ -1,14 +1,18 @@
 <h1>Hoď si Kostkou!</h1>
 
 <h2>Made by: <a>Hrníček Mlíka</a></h2>
+
+<section class="container">
 <%= form_for(@roll) do |f| %>
   <%= f.label :kostka %>
-  <%= f.select :dice, [["6", 6], ["10", 10], ["100", 100], ["20", 20], ["4", 4]] %>
+
+  <%= f.select :dice, [["6", 6], ["10", 10], ["100", 100], ["20", 20], ["4", 4]],{},{ class: "dropdown dropdown-dark" }%>
 
   <%= f.submit :Hoď! %>
 
 <% end  %>
 
+</section>
 
 <table class="container">
   <thead>
